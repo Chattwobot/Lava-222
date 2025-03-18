@@ -1,0 +1,162 @@
+/* 🌌 Background Animation */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* 🌞 Sun & 🌙 Moon Animation */
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sun-moon {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    animation: dayNight 10s infinite linear;
+    filter: blur(5px);
+}
+
+@keyframes dayNight {
+    0% { background: radial-gradient(circle, #FFD700, #FFA500); }
+    50% { background: radial-gradient(circle, #D9CBA3, #666); }
+    100% { background: radial-gradient(circle, #FFD700, #FFA500); }
+}
+
+/* 🌟 Twinkling Stars */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 3s infinite ease-in-out;
+    box-shadow: 0 0 5px white; /* Adds a glowing effect */
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.3); }
+}
+
+
+/* 📱 Phone UI */
+.phone-frame {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 9 / 16;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 8px solid #333;
+    background: transparent;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    z-index: 2;
+}
+
+/* 🎞️ GIF Placement */
+.gif-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+}
+
+.gif-container img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* ⏳ Countdown Timer */
+.countdown-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    position: absolute;
+    bottom: 7%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    width: 60%;
+    justify-content: center;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    width: 80px;
+    height: 80px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.6rem;
+    color: #FFD700;
+    margin-bottom: 5px;
+}
+
+.time-box label {
+    font-size: 0.9rem;
+    color: white;
+}
+
+/* 🚆 Travel Animation */
+.travel-container {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 3;
+}
+
+.travel-item {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: travelMove 15s infinite linear;
+}
+
+@keyframes travelMove {
+    0% { transform: translateX(110%); }
+    50% { transform: translateX(-50%); }
+    100% { transform: translateX(-10%); }
+}
